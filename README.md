@@ -1,4 +1,4 @@
-# schedule
+# schedule-to-google-calendar
 
 ## Project setup
 ```
@@ -19,3 +19,4 @@ npm run build
 ```
 npm run lint
 ```
+ 
