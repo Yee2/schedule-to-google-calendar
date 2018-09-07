@@ -1,7 +1,7 @@
 
 let production = {
     outputDir:"docs",
-    baseUrl:"/"
+    baseUrl:"/schedule-to-google-calendar/"
 };
 let development ={
 
