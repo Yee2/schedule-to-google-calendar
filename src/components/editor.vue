@@ -40,7 +40,8 @@
         </div>
         <div class="field is-horizontal">
             <div class="field-body">
-                <div class="field is-grouped">
+                <div class="field is-grouped is-grouped-multiline">
+
                     <div class="control" v-for="(item,index) in weekArray"
                          :key="index">
                         <a class="button"
@@ -48,6 +49,7 @@
                            :class="{'is-primary':week===index}"
                         >{{item}}</a>
                     </div>
+
                 </div>
             </div>
         </div>

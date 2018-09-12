@@ -11,7 +11,7 @@
         </div>
 
         <transition
-                enter-active-class="animated slideInUp"
+                enter-active-class="animated lightSpeedIn"
                 leave-active-class="animated slideOutDown"
         >
             <div v-if="show">
