@@ -9,7 +9,9 @@
                 {{week[item.week]}}，{{item.startTime}}-{{item.endTime}}节
                 <span class="icon" v-if="item.location"><i class="fas fa-map-marker-alt"></i></span> {{item.location}}
                 <br/>
-                <p class="has-text-right"><a class="button  is-small" @click="update(index)">修改</a>
+                <p class="has-text-right">
+                    <a class="button  is-small" @click="update(index)">修改</a>
+                    <a class="button  is-small" @click="copy(index)">复制</a>
                     <a class="button  is-small" @click="del(index)">删除</a></p>
                 <hr :class="{'is-active':active===index}"/>
             </div>
@@ -41,6 +43,9 @@
             },
             del: function (index) {
                 this.$emit("delete", index);
+            },
+            copy:function (index) {
+                this.$emit("copy", index);
             }
         }
     }

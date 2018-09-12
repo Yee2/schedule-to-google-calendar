@@ -1,5 +1,5 @@
 <template>
-    <div class="field has-addons ScheduleTime">
+    <div class="field buttons has-addons ScheduleTime">
         <p class="control" v-for="item in list" :key="item.value">
             <a class="button"
                :class="{'is-primary':item.value >= min && item.value <= max}"

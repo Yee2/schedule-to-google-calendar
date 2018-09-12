@@ -7,7 +7,7 @@
                         <editor @data="save" v-bind="current" :status="status" @cancel="cancel"/>
                     </div>
                     <div class="column is-4">
-                        <list :data="list" @update="editor" @delete="del" :active="index"/>
+                        <list :data="list" @update="editor" @delete="del" @copy="copy" :active="index"/>
                         <div class="has-text-centered">
                             <div class="field has-addons">
                                 <p class="control"><a class="button is-static">开学时间</a></p>
@@ -92,7 +92,9 @@
             },
             update: function (index, obj) {
                 this.list.splice(index, 1, obj);
-                // this.list[index] = obj;
+            },
+            copy: function (index) {
+                this.list.push(this.list[index]);
             },
             del: function (index) {
                 this.list.splice(index, 1);
@@ -116,6 +118,10 @@
                     messageBox("请先添加课程");
                     return;
                 }
+                if(!this.date ){
+                    messageBox("请先选择开学时间");
+                    return;
+                }
                 let raw = new Blob([generate(this.date, this.list)], {type: "text/csv"});
                 let objectURL = URL.createObjectURL(raw);
                 a.href = objectURL;
@@ -137,6 +143,9 @@
 
     .date-picker .input-wrapper .input {
         text-align: center;
+        box-shadow:none;
+        cursor: pointer;
         /*height: 2.25em !important;*/
+        border: none;
     }
 </style>
